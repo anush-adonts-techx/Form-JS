@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Details Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="customerForm" class="customer-form" novalidate>
+        <h1>Customer Details:</h1>
+        <hr />
+        <!--FULL NAME-->
+        <fieldset class="form-group">
+          <legend class="required">Full Name</legend>
+          <div class="input-group">
+            <div class="input-field">
+              <!--FIRST NAME-->
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                class="input short-input"
+                required
+              />
+              <label for="firstName" class="input-helper-text"
+                >First Name</label
+              >
+            </div>
+            <div class="input-field">
+              <!--LAST NAME-->
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="input short-input"
+                required
+              />
+              <label for="lastName" class="input-helper-text">Last Name</label>
+            </div>
+          </div>
+           <span class="error-message"></span>
+        </fieldset>
+        <!--ADDRESS-->
+        <fieldset class="form-group">
+          <legend class="required">Address</legend>
+          <div class="input-field">
+            <!--Street address-->
+            <input
+              type="text"
+              id="streetAddress"
+              name="streetAddress"
+              class="input"
+              required
+            />
+            <label for="streetAddress" class="input-helper-text"
+              >Street Address</label
+            >
+          </div>
+          <div class="input-field">
+            <!--Street address line 2-->
+            <input
+              type="text"
+              id="streetAddress2"
+              name="streetAddress2"
+              class="input"
+            />
+            <label for="streetAddress2" class="input-helper-text"
+              >Street Address Line 2</label
+            >
+          </div>
+          <div class="input-group">
+            <div class="input-field">
+              <!--CITY-->
+              <input
+                type="text"
+                id="city"
+                name="city"
+                class="input short-input"
+                required
+              />
+              <label for="city" class="input-helper-text">City</label>
+            </div>
+            <div class="input-field">
+              <!--STATE/PROVINCE-->
+              <input
+                type="text"
+                id="stateProvince"
+                name="stateProvince"
+                class="input short-input"
+                required
+              />
+              <label for="stateProvince" class="input-helper-text"
+                >State / Province</label
+              >
+            </div>
+          </div>
+          <div class="input-field">
+            <!--POSTAL/ ZIP CODE-->
+            <input
+              type="text"
+              id="postalZipCode"
+              name="postalZipCode"
+              class="input"
+              required
+            />
+            <label for="postalZipCode" class="input-helper-text"
+              >Postal / Zip Code</label
+            >
+          </div>
+          <span class="error-message"></span>
+        </fieldset>
+        <!--PHONE NUMBER-->
+        <fieldset class="form-group">
+          <legend class="required">Phone Number</legend>
+          <div class="input-field">
+            <input
+              type="tel"
+              id="phoneNumber"
+              name="phoneNumber"
+              class="input short-input"
+              placeholder="(000) 000-0000"
+              required
+            />
+          </div>
+          <span class="error-message"></span>
+        </fieldset>
+        <!--EMAIL-->
+        <fieldset class="form-group">
+          <legend>E-mail</legend>
+          <div class="input-field">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input short-input"
+              placeholder="ex: email@yahoo.com"
+            />
+            <label for="email" class="input-helper-text"
+              >example@example.com</label
+            >
+          </div>
+          <span class="error-message"></span>
+        </fieldset>
+        <!--HOW DID YOU HEAR ABOUT US-->
+        <fieldset class="form-group">
+          <legend class="required">How did you hear about us?</legend>
+          <div class="input-field">
+            <select
+              id="howHear"
+              name="howHear"
+              class="input short-input"
+              required
+            >
+              <option value="">Please Select</option>
+              <option value="None">None</option>
+              <option value="Newspaper">Newspaper</option>
+              <option value="Internet">Internet</option>
+              <option value="Magazine">Magazine</option>
+              <option value="Other">Other (Please specify...)</option>
+            </select>
+          </div>
+          <span class="error-message"></span>
+        </fieldset>
+        <fieldset id="otherSpecifyField" class="form-group other-specify-field">
+          <legend class="required">Other</legend>
+          <div
+            class="input-field"
+            id="otherSpecifyContainer"
+          >
+            <!-- <label class="required-label" for="otherSpecify">Other *</label> -->
+            <input type="text" id="otherSpecify" name="otherSpecify" class="input short-input"/>
+          </div>
+          <span class="error-message"></span>
+        </fieldset>
+        <fieldset class="form-group">
+          <legend>Feedback about us:</legend>
+          <div class="input-field">
+            <textarea id="feedback" name="feedback"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Suggestions if any for further improvement:</legend>
+          <div class="input-field">
+            <textarea id="suggestions" name="suggestions"></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>Will you be willing to recommend us?</legend>
+          <div class="checkbox-group">
+            <div class="checkbox-field">
+              <input
+                type="checkbox"
+                id="recommendYes"
+                name="recommend"
+                value="Yes"
+              />
+              <label for="recommendYes">Yes</label>
+            </div>
+            <div class="checkbox-field">
+              <input
+                type="checkbox"
+                id="recommendMaybe"
+                name="recommend"
+                value="Maybe"
+              />
+              <label for="recommendMaybe">Maybe</label>
+            </div>
+            <div class="checkbox-field">
+              <input
+                type="checkbox"
+                id="recommendNo"
+                name="recommend"
+                value="No"
+              />
+              <label for="recommendNo">No</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <legend>
+            Please give reference of any two people whom you feel:
+          </legend>
+          <table class="reference-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><input type="text" name="ref1_fullName" /></td>
+                <td><input type="text" name="ref1_address" /></td>
+                <td><input type="tel" name="ref1_contact" /></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><input type="text" name="ref2_fullName" /></td>
+                <td><input type="text" name="ref2_address" /></td>
+                <td><input type="tel" name="ref2_contact" /></td>
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+
+    <div id="successModal" class="modal" style="display: none">
+      <div class="modal-content">
+        <div class="success-icon-container">
+          <img
+            src="checkmark.svg"
+            alt="Success Checkmark"
+            class="success-icon-image"
+          />
+        </div>
+        <h2>Thank You!</h2>
+        <p>Your submission has been received.</p>
+      </div>
+    </div>
+  </body>
+</html>
